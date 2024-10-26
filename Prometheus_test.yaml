@@ -1,0 +1,16 @@
+global:    #sets global defaults
+   scrape_interval:5s
+
+scrape_configs:    #select targets, services etc.
+- job_name: "promethues"  #used to group multiple replicated instances targets of the same time
+  static_configs:
+  - targets:
+    - localhost:9090         #scrape promethues on http://localhost:9090/metrics
+-job_name: "demo"    
+static_configs:
+  -targets:
+    - demo.promlabs.com:10000
+    - demo.promlabs.com:10001
+    - demo.promlabs.com:10002
+
+
